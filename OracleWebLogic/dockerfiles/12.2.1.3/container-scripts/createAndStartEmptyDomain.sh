@@ -63,6 +63,9 @@ if [ $ADD_DOMAIN -eq 0 ]; then
    echo "username=${USER}" >> $DOMAIN_HOME/servers/AdminServer/security/boot.properties
    echo "password=${PASS}" >> $DOMAIN_HOME/servers/AdminServer/security/boot.properties
    ${DOMAIN_HOME}/bin/setDomainEnv.sh
+
+   # Add missing file 
+   cp /u01/oracle/DemoIdentity.jks  ${DOMAIN_HOME}/security
 fi
 
 # Start Admin Server and tail the logs
